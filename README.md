@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The purpose of this template is to speed up the creation of new Spring applications within HMCTS
+The purpose of this template is to speed up the creation of new E2E Spring applications within HMCTS
 and help keep the same standards across multiple teams. If you need to create a new app, you can
 simply use this one as a starting point and build on top of it.
 
@@ -10,14 +10,12 @@ simply use this one as a starting point and build on top of it.
 
 The template is a working application with a minimal setup. It contains:
 * application skeleton
-* setup script to prepare project
+* cucumber features and tests runner
 * common plugins and libraries
 * [HMCTS Java plugin](https://github.com/hmcts/gradle-java-plugin)
 * docker setup
-* automatically publishes API documentation to [hmcts/cnp-api-docs](https://github.com/hmcts/cnp-api-docs)
 * code quality tools already set up
 * MIT license and contribution information
-* Helm chart using chart-java.
 
 The application exposes health endpoint (http://localhost:4550/health).
 
