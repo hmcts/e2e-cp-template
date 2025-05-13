@@ -1,5 +1,7 @@
 package uk.gov.hmcts.cp.bdd.steps;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.HashMap;
 
 public class BaseSteps {
@@ -14,6 +16,7 @@ public class BaseSteps {
     private static final String BODY = "body";
 
     private final HashMap<String, Object> localData = new HashMap<>();
+    protected final ObjectMapper objectMapper = new ObjectMapper();
 
     public void cleatLocalData() {
         this.localData.clear();
