@@ -4,9 +4,12 @@ import java.util.HashMap;
 
 public class BaseSteps {
 
-    private static final String BASE_API_VERSION = "0.0.2";
-    public static final String BASE_API_URL = "https://virtserver.swaggerhub.com/HMCTS-DTS/api-cp-refdata-courthearing-courthouses/" + BASE_API_VERSION;
-    public static final String API_COURTHOUSES = "/courthouses";
+    private static final String COURTHOUSES_BASE_API_VERSION = "0.0.2";
+    private static final String COURTJUDGES_BASE_API_VERSION = "0.2.0";
+    public static final String COURTHOUSES_BASE_API_URL = "https://virtserver.swaggerhub.com/HMCTS-DTS/api-cp-refdata-courthearing-courthouses/" + COURTHOUSES_BASE_API_VERSION;
+    public static final String COURTJUDGES_BASE_API_URL = "https://virtserver.swaggerhub.com/HMCTS-DTS/api-cp-refdata-courthearing-judges/" + COURTJUDGES_BASE_API_VERSION;
+    public static final String COURTHOUSES_API = "/courthouses";
+    public static final String COURTJUDGES_API = "/judges";
 
     private static final String BODY = "body";
 
