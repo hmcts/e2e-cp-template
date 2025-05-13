@@ -3,8 +3,12 @@ package uk.gov.hmcts.cp.bdd.steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.client.RestClient;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -26,10 +30,10 @@ public class CourtJudgesTestSteps extends BaseSteps {
     }
 
     @Then("We receive a response from Swagger Hub for courtJudges")
-    public void weReceiveAResponseFromSwaggerHub() {
+    public void weReceiveAResponseFromSwaggerHub() throws IOException {
         HashMap<String, Object> body = getBody();
-        assertThat(body).containsKey("judiciary");
+        File judgesFile = ResourceUtils.getFile("classpath:data/courtJudges.json");
+        HashMap judgesAsMap =  objectMapper.readValue(judgesFile, HashMap.class);
+        assertThat(body).isEqualTo(judgesAsMap);
     }
-
-
 }
