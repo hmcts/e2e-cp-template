@@ -17,10 +17,10 @@ public class CourtHousesTestSteps extends BaseSteps {
     }
 
     @When("We make a request to courtHouses Swagger Hub by id {string}")
-    public void weMakeARequestToWSwaggerHub() {
+    public void weMakeARequestToWSwaggerHub(String id) {
         RestClient client = RestClient.create();
         setBody(client.get()
-            .uri(COURTHOUSES_BASE_API_URL + COURTHOUSES_API + "/1234")
+            .uri(COURTHOUSES_BASE_API_URL + COURTHOUSES_API + "/id")
             .retrieve()
             .body(HashMap.class));
     }
