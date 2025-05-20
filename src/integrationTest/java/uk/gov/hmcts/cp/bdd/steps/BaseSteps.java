@@ -8,10 +8,14 @@ public class BaseSteps {
 
     private static final String COURTHOUSES_BASE_API_VERSION = "0.0.2";
     private static final String COURTJUDGES_BASE_API_VERSION = "0.2.0";
+    private static final String COURTSCHEDULING_BASE_API_VERSION = "0.1.0";
     public static final String COURTHOUSES_BASE_API_URL = "https://virtserver.swaggerhub.com/HMCTS-DTS/api-cp-refdata-courthearing-courthouses/" + COURTHOUSES_BASE_API_VERSION;
     public static final String COURTJUDGES_BASE_API_URL = "https://virtserver.swaggerhub.com/HMCTS-DTS/api-cp-refdata-courthearing-judges/" + COURTJUDGES_BASE_API_VERSION;
+    public static final String COURTSCHEDULING_BASE_API_URL = "https://virtserver.swaggerhub.com/HMCTS-DTS/api-cp-crime-schedulingandlisting-courtschedule/" + COURTSCHEDULING_BASE_API_VERSION;
     public static final String COURTHOUSES_API = "/courthouses";
     public static final String COURTJUDGES_API = "/judges";
+    public static final String COURTSCHEDULING_API = "/case";
+    public static final String COURTSCHEDULING = "/courtschedule";
 
     private static final String BODY = "body";
 
