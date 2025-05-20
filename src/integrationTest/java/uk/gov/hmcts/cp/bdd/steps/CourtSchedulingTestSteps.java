@@ -12,8 +12,7 @@ import java.util.HashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class CourtSchedulingTestSteps extends BaseSteps
-{
+public class CourtSchedulingTestSteps extends BaseSteps {
     @Given("courtScheduling System is running")
     public void systemIsRunning() {
         cleatLocalData();
@@ -23,7 +22,7 @@ public class CourtSchedulingTestSteps extends BaseSteps
     public void weMakeARequestToWSwaggerHub(String id) {
         RestClient client = RestClient.create();
         setBody(client.get()
-                    .uri(COURTSCHEDULING_BASE_API_URL + COURTSCHEDULING_API + "/id"+ COURTSCHEDULING)
+                    .uri(COURTSCHEDULING_BASE_API_URL + COURTSCHEDULING_API + "/id" + COURTSCHEDULING)
                     .retrieve()
                     .body(HashMap.class));
     }
@@ -33,7 +32,7 @@ public class CourtSchedulingTestSteps extends BaseSteps
         HashMap<String, Object> body = getBody();
 
         File courtSchedulingFile = ResourceUtils.getFile("classpath:data/courtSchedule.json");
-        HashMap courtSchedulingFileAsMap =  objectMapper.readValue(courtSchedulingFile, HashMap.class);
+        HashMap courtSchedulingFileAsMap = objectMapper.readValue(courtSchedulingFile, HashMap.class);
         assertThat(body).containsKey("courtSchedule");
         assertThat(body).isEqualTo(courtSchedulingFileAsMap);
     }

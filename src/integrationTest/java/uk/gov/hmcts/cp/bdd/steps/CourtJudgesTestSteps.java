@@ -7,7 +7,6 @@ import org.springframework.util.ResourceUtils;
 import org.springframework.web.client.RestClient;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -33,7 +32,7 @@ public class CourtJudgesTestSteps extends BaseSteps {
     public void weReceiveAResponseFromSwaggerHub() throws IOException {
         HashMap<String, Object> body = getBody();
         File judgesFile = ResourceUtils.getFile("classpath:data/courtJudges.json");
-        HashMap judgesAsMap =  objectMapper.readValue(judgesFile, HashMap.class);
+        HashMap judgesAsMap = objectMapper.readValue(judgesFile, HashMap.class);
         assertThat(body).isEqualTo(judgesAsMap);
     }
 }

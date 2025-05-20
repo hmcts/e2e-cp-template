@@ -14,8 +14,8 @@ public class BaseSteps {
     public static final String COURTSCHEDULING_BASE_API_URL = "https://virtserver.swaggerhub.com/HMCTS-DTS/api-cp-crime-schedulingandlisting-courtschedule/" + COURTSCHEDULING_BASE_API_VERSION;
     public static final String COURTHOUSES_API = "/courthouses";
     public static final String COURTJUDGES_API = "/judges";
-    public static final String COURTSCHEDULING_API ="/case";
-    public static final String COURTSCHEDULING ="/courtschedule";
+    public static final String COURTSCHEDULING_API = "/case";
+    public static final String COURTSCHEDULING = "/courtschedule";
 
     private static final String BODY = "body";
 

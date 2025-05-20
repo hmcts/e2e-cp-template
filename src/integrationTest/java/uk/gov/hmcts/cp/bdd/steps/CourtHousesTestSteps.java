@@ -7,7 +7,6 @@ import org.springframework.util.ResourceUtils;
 import org.springframework.web.client.RestClient;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -24,9 +23,9 @@ public class CourtHousesTestSteps extends BaseSteps {
     public void weMakeARequestToWSwaggerHub(String id) {
         RestClient client = RestClient.create();
         setBody(client.get()
-            .uri(COURTHOUSES_BASE_API_URL + COURTHOUSES_API + "/id")
-            .retrieve()
-            .body(HashMap.class));
+                    .uri(COURTHOUSES_BASE_API_URL + COURTHOUSES_API + "/id")
+                    .retrieve()
+                    .body(HashMap.class));
     }
 
     @Then("We receive a response from Swagger Hub for courtHouses")
@@ -34,7 +33,7 @@ public class CourtHousesTestSteps extends BaseSteps {
         HashMap<String, Object> body = getBody();
 
         File courtHouseFile = ResourceUtils.getFile("classpath:data/courtHouse.json");
-        HashMap courtHouseFileAsMap =  objectMapper.readValue(courtHouseFile, HashMap.class);
+        HashMap courtHouseFileAsMap = objectMapper.readValue(courtHouseFile, HashMap.class);
         assertThat(body).containsKey("courtHouse");
         assertThat(body).isEqualTo(courtHouseFileAsMap);
     }
