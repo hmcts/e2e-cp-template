@@ -129,7 +129,7 @@ ext {
   logbackVersion = "1.5.18"
   lombokVersion = "1.18.38"
   springBootVersion = "3.5.5"
-  cucumber = "7.27.2"
+  cucumber = "7.28.0"
   junitPlatform = "1.13.4"
 }
 
